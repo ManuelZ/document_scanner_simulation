@@ -1,0 +1,53 @@
+#VRML_SIM R2023b utf8
+# license: 
+# license url: https://www.cgtrader.com/free-3d-models/industrial/other/cardboard-package-box
+# documentation url: 
+# keywords: industrial/container
+# A cardboard box.
+# template language: javascript
+
+
+
+PROTO CardboardBox1 [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 0 1 0
+  field SFString   name        "Cardboard box"
+  field SFFloat    mass        10
+]
+{
+  %<
+  let scale, filepath, bbox_size, bbox_translation;
+  scale = 0.010;
+  filepath = "./textures/cardboard-1/box.dae";
+  bbox_size = [0.5927, 0.438, 0.495];
+  bbox_translation = [-0.001, 0.000, 0.248];
+  >%
+  
+  Solid {
+    name IS name
+    translation IS translation
+    rotation IS rotation
+    children [
+      Transform {
+        scale           %<= scale >% %<= scale >% %<= scale >%
+        children [
+          CadShape {
+            url ["%<= filepath >%"]
+          }
+        ]
+    }
+    ]
+    physics Physics {
+      density -1
+      mass %<= fields.mass.value >%
+    }
+    boundingObject Transform{
+      translation %<=bbox_translation[0]>% %<=bbox_translation[1]>% %<=bbox_translation[2]>%
+      children [
+        Box {
+          size %<=bbox_size[0]>% %<=bbox_size[1]>% %<=bbox_size[2]>%
+        } 
+      ]
+    }
+  }
+}
