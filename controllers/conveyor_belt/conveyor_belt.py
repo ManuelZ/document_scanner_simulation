@@ -1,7 +1,6 @@
-import sys
 from controller import Supervisor
 
-from math import pi, radians as rad
+from math import radians as rad
 import random
 
 TIME_STEP = 10000
