@@ -35,7 +35,10 @@ It's a simple process, but with some tunable parameters. One of the most importa
 Using a custom OpenCV UI is possible to find good parameters that allow one to segment pieces of white paper. In the following image, the right side shows the binary image created from the HSV thresholding and the left side shows the segmented image.
 
 ##### Demo
-![video](images/warehouse.mp4)
+
+https://github.com/ManuelZ/document_scanner_simulation/assets/115771/081c2016-b77b-4e0f-889d-1e3c95975116
+
+
 
 ## Observations
 
