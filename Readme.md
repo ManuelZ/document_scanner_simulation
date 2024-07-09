@@ -1,3 +1,80 @@
+
+
+## A document scanner tested in a simulation environment
+
+This document scanner is capable of transforming images of rectangular documents into a top-down view of the document.
+To test it, I created a simulation using the Webots robotics simulator.
+
+![Warehouse](images/warehouse.png)
+
+The simulation is composed of some important objects.
+##### A running conveyor belt
+A model provided by Webots to automate the movement of objects across an environment.
+
+##### Cardboard box models
+Multiple instances of two cardboard box models running on top of the conveyor belt. The boxes have a document in one of their sides and it's assumed that this face is always pointing up.
+
+##### Camera
+A camera pointing downwards, towards the conveyor belt.
+
+##### Light sources
+- A global light source, to illuminate the environment.
+- A light source next to the camera, to illuminate the moving carboard boxes
+
+##### Document scanner
+A document scanner application for processing the camera images. It's built with OpenCV, using the following classical Computer Vision techniques:
+
+- Color segmentation in the HSV colorspace
+- Contour detection
+- Perspective transform 
+
+It's a simple process, but with some tunable parameters. One of the most important ones is the HSV color threshold values used to segment the documents found in the boxes, like this one:
+
+![image_to_segment.png](image_to_segment.png)
+
+Using a custom OpenCV UI is possible to find good parameters that allow one to segment pieces of white paper. In the following image, the right side shows the binary image created from the HSV thresholding and the left side shows the segmented image.
+
+##### Demo
+![video](images/warehouse.mp4)
+
+## Observations
+
+Testing this app in a simulation made me notice that the following variables can have an influence in the efficacy of the app:
+- The HSV threshold values
+Finding a good set of HSV threshold values works only if all the documents have mostly the same color, in this case white.
+- Intensity and direction of light sources
+The thesholding can be affected due to the direction and intesity of the light sources illuminating the scene.
+- The size of the box model
+- The model texture of the box model:
+    - Lines due to the inherent texture of corrugated cardboard
+    - Wrinkles in plain cardboard
+    - Reflections due to the material of the box (some include a metalness texture to make it look like plastic)
+
+- Orientation of the documents as view from the camera
+- Other figures or symbols present in the box
+- The distance between boxes
+- Position of the camera
+- The parameters of the simulated camera
+    - Field of view
+    - Lens distortion
+    - Lens flare 
+    - Bloom
+
+## Requirements and versions
+- Python 3.11
+- Webots 2023b
+- OpenCV 4.9
+- Numpy
+- imutils
+
+
+## Using a Conda environment with Webots
+Create a Conda environment with the required libraries and launch Webots from within the activated environment.
+
+```
+(opencv) $ webots .
+```
+
 ## A cardboard box model
 
 I downloaded cardboard box model [from Sketchfab](https://sketchfab.com/3d-models/cardboard-box-58db7bc84fe64eb990f851b9e50fab5c):
@@ -136,4 +213,3 @@ I don't think that Webots it's able to load this type of texture. I might be wro
 - normalMap
 - occlusionMap
 - emissiveColorMap
-
