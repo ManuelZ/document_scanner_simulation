@@ -30,7 +30,7 @@ A document scanner application for processing the camera images. It's built with
 
 It's a simple process, but with some tunable parameters. One of the most important ones is the HSV color threshold values used to segment the documents found in the boxes, like this one:
 
-![image_to_segment.png](image_to_segment.png)
+![image_to_segment.png](images/image_to_segment.png)
 
 Using a custom OpenCV UI is possible to find good parameters that allow one to segment pieces of white paper. In the following image, the right side shows the binary image created from the HSV thresholding and the left side shows the segmented image.
 
