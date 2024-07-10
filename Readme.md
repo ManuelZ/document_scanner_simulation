@@ -218,7 +218,7 @@ for (size_t j = 0; j < mesh->mNumVertices; ++j) {
 
 The code appears to load mesh vertices, mesh normals, one texture map and faces indices. Despite the normals map data being loaded, it didn’t affect the model's appearance. Why don't I see any difference when using it? And, which part of the code is really loading the `mesh` data?
 
-Looking through the Webots code [I found](https://github.com/cyberbotics/webots/blob/1c6c9a38e7351d3c586e15ff039b26aa53033a7b/dependencies/Makefile.linux#L13) that Webots uses the Assimp library to load CAD data. Searching Assimp's GitHub issues related to .obj files and normal maps, I found several issues: [issue 1](https://github.com/assimp/assimp/issues/1121) [issue 2](https://github.com/assimp/assimp/issues/430), [issue 3](https://github.com/assimp/assimp/issues/3726). There I discovered that changing `map_Bump` to either `Map_Kn` or `norm` resolved the issue:
+Looking through the Webots code [I found](https://github.com/cyberbotics/webots/blob/1c6c9a38e7351d3c586e15ff039b26aa53033a7b/dependencies/Makefile.linux#L13) that Webots uses the Assimp library to load CAD data. Searching Assimp's GitHub issues related to `.obj` files and normal maps, I found several issues: [issue 1](https://github.com/assimp/assimp/issues/1121) [issue 2](https://github.com/assimp/assimp/issues/430), [issue 3](https://github.com/assimp/assimp/issues/3726). There I discovered that changing `map_Bump` to either `Map_Kn` or `norm` resolved the issue:
 
 
 ![BaseColor, Roughness and Normal](images/BaseColor_Roughness_and_Normal.png)
