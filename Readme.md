@@ -243,3 +243,14 @@ I don't think that Webots it's able to load this type of texture. I might be wro
 - normalMap
 - occlusionMap
 - emissiveColorMap
+
+
+## Conclusion
+
+The document scanner application demonstrated the ability to transform images of rectangular documents into a top-down view within a simulated environment using Webots. The simulation setup included a conveyor belt, cardboard box models, a downward-facing camera, and light sources, all of which contributed to test the accuracy and reliability of the document scanner. The scanner utilized OpenCV for image processing, employing techniques such as color segmentation in the HSV color space, contour detection, and perspective transform.
+
+Several variables were found to influence the scanner's efficacy, including HSV threshold values, light intensity and direction, box and document sizes, model textures, document orientation, presence of other figures, distance between boxes, camera position, and camera parameters. In real-world applications, it's essential to identify which variables you can control and adjust them to compensate for the variables that are beyond your control. By fine-tuning the controllable factors, such as the camera position, HSV threshold values, local light intensity and direction, one can mitigate the impact of uncontrollable elements, like global lighting conditions and the presence of other environment objects.
+
+The experiment also highlighted the challenges faced when working with 3D mesh modeling and texturing, particularly in converting and importing models from different formats and using them in a simulator.
+
+Overall, the project provided valuable insights into both the capabilities and limitations of this document scanner version in a controlled simulation environment and the complexities of 3D modeling and texturing for realistic simulations.
