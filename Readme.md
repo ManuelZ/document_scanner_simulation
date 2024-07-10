@@ -124,7 +124,7 @@ A Google search led me to a relevant [Robotics Stackexchange post](https://robot
 After loading the `.fbx` in Blender I had something like this:
 ![alt text](images/blender_map.png)
 
-When Blender exports a model in the Wavefront format, it creates a `.obj` and a `.mtl` file. The ``mtl` file is a materials file which looks like this:
+When Blender exports a model in the Wavefront format, it creates a `.obj` and a `.mtl` file. The `mtl` file is a materials file which looks like this:
 
 ```
 # Blender 4.1.1 MTL File: 'box.blend'
