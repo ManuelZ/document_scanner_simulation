@@ -147,7 +147,7 @@ map_Pr textures/CardboardBox_Low_DefaultMaterial_Roughness.png
 map_Bump -bm 1.000000 textures/CardboardBox_Low_DefaultMaterial_Normal.png
 ```
 
-The `.obj` file references the .mtl file, and when Webots' `CadShape` node loads the Wavefront file, it parses the .mtl file and extracts the material information.
+The `.obj` file references the `.mtl` file, and when Webots' `CadShape` node loads the Wavefront file, it parses the `.mtl` file and extracts the material information.
 
 Here are the lines that point to the files I defined in Blender:
 ```
