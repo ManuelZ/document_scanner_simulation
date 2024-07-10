@@ -105,7 +105,7 @@ Create a Conda environment with the required libraries and launch Webots from wi
 
 ## A cardboard box model
 
-Using high quality models to produce realistic simulations can help one identify potential situations that could have an impact on the document detection performance. Here I explain the process thatI went through while exploring the realm of 3D mesh modeling and texturing.
+Using high quality models to produce realistic simulations can help one identify potential situations that could have an impact on the document detection performance. Here I explain the process that I went through while exploring the realm of 3D mesh modeling and texturing.
 
 I downloaded cardboard box model [from Sketchfab](https://sketchfab.com/3d-models/cardboard-box-58db7bc84fe64eb990f851b9e50fab5c):
 ![alt text](images/sketchfab_original.png)
